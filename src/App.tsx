@@ -30,6 +30,7 @@ function App() {
   const handleRunCode = () => {
     try {
       // Evaluate the JavaScript code (you can extend this for Python, etc. using API calls)
+      // eslint-disable-next-line no-eval
       const result = eval(code); // Be cautious with eval in production
       setOutput(String(result));
     } catch (err) {
