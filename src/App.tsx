@@ -12,9 +12,12 @@ function App() {
   // Function to extract video ID from a YouTube URL
   const extractVideoId = (url: string): string => {
     const regExp =
-      /(?:https?:\/\/(?:www\.)?youtube\.com\/(?:watch\?v=|embed\/))([a-zA-Z0-9_-]{11})/;
+      /(?:https?:\/\/(?:www\.)?youtube\.com\/(?:watch\?v=|embed\/))([a-zA-Z0-9_-]{11})|(?:https?:\/\/(?:www\.)?youtu\.be\/)([a-zA-Z0-9_-]{11})/;
     const match = url.match(regExp);
-    return match ? match[1] : ""; // Return video ID if matched, otherwise an empty string
+    if (match) {
+      return match[1] || match[2]; // Return the video ID from either the full URL or the shortened URL
+    }
+    return ""; // Return empty string if no match found
   };
 
   // Handle input change for YouTube URL
@@ -41,8 +44,8 @@ function App() {
   return (
     <div className="h-screen bg-gray-900 text-white flex flex-col">
       {/* Header */}
-      <header className="p-4 bg-gray-800 text-center text-lg font-bold">
-        Code and Learn Platform
+      <header className="p-1 bg-gray-800 text-center text-lg font-bold">
+        Learnod
       </header>
 
       {/* Main Layout */}
@@ -62,7 +65,7 @@ function App() {
         </div>
 
         {/* Code Editor (Right Panel) */}
-        <div className="w-1/2 p-4 border-l border-gray-700">
+        <div className="h-fit w-1/2 p-4 border-l border-gray-700">
           <h3 className="text-xl mb-4">Code Editor</h3>
           <CodeEditor code={code} setCode={setCode} />
           <button

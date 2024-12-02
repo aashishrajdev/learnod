@@ -1,7 +1,8 @@
 module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  darkMode: "class", // Enables dark mode based on a class
+  content: ["./src/**/*.{js,jsx,ts,tsx}"], // Specify the paths to your files
   theme: {
-    extend: {},
+    extend: {}, // You can add customizations here
   },
-  plugins: [],
+  plugins: [], // Add any Tailwind plugins if needed
 };

@@ -11,7 +11,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ code, setCode }) => {
     <div className="h-full bg-gray-800 rounded shadow-lg p-2">
       <MonacoEditor
         height="400"
-        language="javascript" // You can change this to other languages
+        language="python" // You can change this to other languages
         theme="vs-dark"
         value={code}
         onChange={(newCode) => setCode(newCode)} // Update the state on code change
