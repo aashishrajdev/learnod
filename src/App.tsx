@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import CodeEditor from "./components/CodeEditor";
 import VideoPlayer from "./components/VideoPlayer";
 
@@ -15,9 +14,9 @@ function App() {
       /(?:https?:\/\/(?:www\.)?youtube\.com\/(?:watch\?v=|embed\/))([a-zA-Z0-9_-]{11})|(?:https?:\/\/(?:www\.)?youtu\.be\/)([a-zA-Z0-9_-]{11})/;
     const match = url.match(regExp);
     if (match) {
-      return match[1] || match[2]; // Return the video ID from either the full URL or the shortened URL
+      return match[1] || match[2];
     }
-    return ""; // Return empty string if no match found
+    return "";
   };
 
   // Handle input change for YouTube URL
@@ -32,9 +31,9 @@ function App() {
   // Handle compiling and running code
   const handleRunCode = () => {
     try {
-      // Evaluate the JavaScript code (you can extend this for Python, etc. using API calls)
+      // Evaluate JavaScript code (use sandboxing for safety in production)
       // eslint-disable-next-line no-eval
-      const result = eval(code); // Be cautious with eval in production
+      const result = eval(code);
       setOutput(String(result));
     } catch (err) {
       setOutput(`Error: ${err}`);
@@ -44,14 +43,14 @@ function App() {
   return (
     <div className="h-screen bg-gray-900 text-white flex flex-col">
       {/* Header */}
-      <header className="p-1 bg-gray-800 text-center text-lg font-bold">
+      <header className="p-3 bg-gray-800 text-center text-lg font-bold">
         Learnod
       </header>
 
       {/* Main Layout */}
-      <div className="flex flex-grow">
+      <div className="flex-grow flex flex-col md:flex-row">
         {/* Video Player (Left Panel) */}
-        <div className="w-1/2 p-4">
+        <div className="w-full md:w-1/2 p-4">
           <h3 className="text-xl mb-4">Video Player</h3>
           <input
             type="text"
@@ -60,17 +59,16 @@ function App() {
             onChange={handleUrlChange}
             className="w-full mb-4 p-2 rounded border border-gray-600 bg-gray-800 text-white"
           />
-          {/* Pass videoId to the VideoPlayer component */}
           {videoId && <VideoPlayer videoId={videoId} />}
         </div>
 
         {/* Code Editor (Right Panel) */}
-        <div className="h-fit w-1/2 p-4 border-l border-gray-700">
+        <div className="w-full h-fit md:w-1/2 p-4 border-t md:border-t-0 md:border-l border-gray-700">
           <h3 className="text-xl mb-4">Code Editor</h3>
           <CodeEditor code={code} setCode={setCode} />
           <button
             onClick={handleRunCode}
-            className="mt-4 p-2 bg-blue-600 text-white rounded"
+            className="mt-4 w-full md:w-auto px-4 py-2 bg-blue-600 hover:bg-blue-700 transition text-white rounded"
           >
             Run Code
           </button>
