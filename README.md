@@ -46,14 +46,7 @@ cd server
 npm install
 ```
 
-3. Create a `.env` file in the root directory:
-
-```env
-REACT_APP_API_URL=http://localhost:5001
-REACT_APP_GOOGLE_API_KEY=your_google_api_key_here
-```
-
-4. Start the development servers:
+3. Start the development servers:
 
 ```bash
 # Start the frontend (from root directory)
