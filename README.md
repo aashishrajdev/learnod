@@ -1,46 +1,99 @@
-# Getting Started with Create React App
+# Learnod - Interactive Learning Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Learnod is an interactive learning platform that combines video tutorials with hands-on coding practice. It features a built-in code editor and video player, allowing users to learn programming concepts while practicing them in real-time.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- 🎥 Integrated YouTube Video Player
+- 💻 Built-in Code Editor with Syntax Highlighting
+- 🌓 Dark/Light Mode
+- 🔄 Real-time Code Execution
+- 📱 Responsive Design
+- 🎨 Beautiful UI with Tailwind CSS
 
-### `npm start`
+## Supported Languages
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- HTML
+- JavaScript
+- Python
+- JSON
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (v14 or higher)
+- npm or yarn
+- Python (for Python code execution)
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone https://github.com/yourusername/learnod.git
+cd learnod
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. Install dependencies:
 
-### `npm run eject`
+```bash
+# Install frontend dependencies
+npm install
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Install backend dependencies
+cd server
+npm install
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Create a `.env` file in the root directory:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```env
+REACT_APP_API_URL=http://localhost:5001
+REACT_APP_GOOGLE_API_KEY=your_google_api_key_here
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+4. Start the development servers:
 
-## Learn More
+```bash
+# Start the frontend (from root directory)
+npm start
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Start the backend (from server directory)
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The application will be available at `http://localhost:3000`.
+
+## Project Structure
+
+```
+learnod/
+├── public/             # Static files
+├── src/               # Frontend source code
+│   ├── components/    # React components
+│   ├── services/      # API services
+│   └── styles/        # CSS styles
+├── server/            # Backend server
+│   ├── routes/        # API routes
+│   └── services/      # Code execution services
+└── package.json       # Project dependencies
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- [Monaco Editor](https://microsoft.github.io/monaco-editor/)
+- [React](https://reactjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
