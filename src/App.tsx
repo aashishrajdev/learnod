@@ -266,7 +266,7 @@ function App() {
           isDarkMode ? "bg-gray-800" : "bg-white border-t"
         } transition-colors duration-300`}
       >
-        <div className="container mx-auto px-4 text-center">
+        <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
           <p
             className={`text-sm ${
               isDarkMode ? "text-gray-400" : "text-gray-500"
@@ -274,6 +274,29 @@ function App() {
           >
             © {new Date().getFullYear()} Learnod - Interactive Learning Platform
           </p>
+          <div
+            className={`text-sm mt-2 md:mt-0 ${
+              isDarkMode ? "text-gray-400" : "text-gray-500"
+            }`}
+          >
+            Built by <strong>Aashish</strong> —
+            <a
+              href="https://x.com/rajaashish_dev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2 underline"
+            >
+              Twitter
+            </a>
+            <a
+              href="https://github.com/aashishrajdev"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2 underline"
+            >
+              GitHub
+            </a>
+          </div>
         </div>
       </footer>
     </div>
